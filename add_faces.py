@@ -1,6 +1,7 @@
 import cv2
 
 video=cv2.VideoCapture(0)
+facedetect=cv2.CascadeClassifier('data/haarcascade_frontalface_default.xml')
 
 while True:
     ret,frame=video.read()
