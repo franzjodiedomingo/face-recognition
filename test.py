@@ -43,13 +43,13 @@ while True:
         date=datetime.fromtimestamp(ts).strftime("%d-%m-%Y")
         timestamp=datetime.fromtimestamp(ts).strftime("%H:%M-%S")
         exist=os.path.isfile("Attendance/Attendance_" + date + ".csv")
-        cv2.rectangle(frame, (x,y), (x+w, y+h), (0,0,255), 1)
-        cv2.rectangle(frame,(x,y),(x+w,y+h),(50,50,255),2)
-        cv2.rectangle(frame,(x,y-40),(x+w,y),(50,50,255),-1)
+        cv2.rectangle(frame, (x,y), (x+w, y+h), (0,0,200), 1)
+        cv2.rectangle(frame,(x,y),(x+w,y+h),(50,50,200),2)
+        cv2.rectangle(frame,(x,y-40),(x+w,y),(50,50,200),-1)
         cv2.putText(frame, str(output[0]), (x,y-15), cv2.FONT_HERSHEY_COMPLEX, 1, (255,255,255), 1)
-        cv2.rectangle(frame, (x,y), (x+w, y+h), (50,50,255), 1)
+        cv2.rectangle(frame, (x,y), (x+w, y+h), (50,50,200), 1)
         attendance=[str(output[0]), str(timestamp)]
-    imgBackground[162:162 + 480, 55:55 + 640] = frame
+    imgBackground[120:120 + 480, 320:320 + 640] = frame
     cv2.imshow("Frame",imgBackground)
     k=cv2.waitKey(1)
     if k==ord('o'):
